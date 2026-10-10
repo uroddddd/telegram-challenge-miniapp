@@ -1,0 +1,21 @@
+[Unit]
+Description=Telegram challenge Mini App
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=challengebot
+WorkingDirectory=/opt/challenge-miniapp
+ExecStart=/opt/challenge-miniapp/.venv/bin/python /opt/challenge-miniapp/server.py
+Restart=on-failure
+RestartSec=10
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/challenge-miniapp
+
+[Install]
+WantedBy=multi-user.target

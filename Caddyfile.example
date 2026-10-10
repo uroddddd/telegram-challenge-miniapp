@@ -1,0 +1,5 @@
+# Replace this with your domain; its DNS A record must point to the VPS IPv4.
+challenge.your-domain.example {
+    encode gzip
+    reverse_proxy 127.0.0.1:8080
+}
